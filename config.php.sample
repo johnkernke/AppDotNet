@@ -1,0 +1,6 @@
+<?php
+
+$app_adn_client_id = 'XXXXXXXXXX';
+$app_adn_client_secret = 'XXXXXXXXXX';
+$app_adn_redirect_uri = 'https://example.com/callback.php';
+$app_adn_scopes = array('stream', 'email', 'write_post', 'follow', 'messages', 'export');

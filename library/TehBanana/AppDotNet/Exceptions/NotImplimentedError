@@ -1,0 +1,7 @@
+<?php
+namespace TehBanana\AppDotNet\Exceptions;
+
+class NotImplimentedError extends \Exception
+{
+
+}
