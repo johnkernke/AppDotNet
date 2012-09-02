@@ -258,7 +258,7 @@ class Core
     public function httpGet($url, $parameters = null)
     {
         if ($parameters) {
-            $url .= http_build_query($parameters);
+            $url .= '?' . http_build_query($parameters);
         }
 
         $ch = curl_init($url);
