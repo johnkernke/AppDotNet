@@ -227,8 +227,9 @@ class Core
         $ch = curl_init($url);
         $headers = array();
         if ($is_json) {
-            $headers[] = 'Content-Type: application/json';
             $post_fields = json_encode($parameters);
+            $headers[] = 'Content-Type: application/json';
+            $headers[] = 'Content-Length: ' . strlen($post_fields);
         } else {
             $post_fields = http_build_query($parameters);
         }

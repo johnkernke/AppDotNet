@@ -145,7 +145,7 @@ class Users
      * Requires scope: none
      * @param int|string $user_id The user id number or the @username to get posts of
      * @param array $optional_parameters An array of option parameters. Allowed keys:
-     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts
+     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts, include_annotations
      * @return array
      */
     public function getPosts($user_id = 'me', $optional_parameters = array())
@@ -159,7 +159,8 @@ class Users
                     'count',
                     'include_muted',
                     'include_deleted',
-                    'include_directed_posts'
+                    'include_directed_posts',
+                    'include_annotations'
                 )
             );
         }
@@ -172,7 +173,7 @@ class Users
      * Requires scope: none
      * @param int|string $user_id The user id number or the @user to get the mentions of
      * @param array $optional_parameters An array of option parameters. Allowed keys:
-     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts
+     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts, include_annotations
      * @return array
      */
     public function getMentions($user_id = 'me', $optional_parameters = array())
@@ -186,7 +187,8 @@ class Users
                     'count',
                     'include_muted',
                     'include_deleted',
-                    'include_directed_posts'
+                    'include_directed_posts',
+                    'include_annotations'
                 )
             );
         }

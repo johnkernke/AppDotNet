@@ -38,6 +38,7 @@ class Posts
     public function createPost($text, $reply_to = null, $annotations = null)
     {
         $parameters = array();
+        $url = $this->base_url;
 
         $parameters['text'] = $text;
 
@@ -47,9 +48,10 @@ class Posts
 
         if ($annotations) {
             $parameters['annotations'] = $annotations;
+            $url .= '?include_annotations=1';
         }
 
-        return $this->adn_core->httpPost($this->base_url, $parameters, true);
+        return $this->adn_core->httpPost($url, $parameters, true);
     }
 
     /**
@@ -79,7 +81,7 @@ class Posts
      * Requires scope: none
      * @param int $post_id The post id to get the replies for
      * @param array $optional_parameters An array of optional parameters. Allowed keys:
-     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts
+     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts, include_annotations
      * @return array
      */
     public function getPostReplies($post_id, $optional_parameters = array())
@@ -93,7 +95,8 @@ class Posts
                     'count',
                     'include_muted',
                     'include_deleted',
-                    'include_directed_posts'
+                    'include_directed_posts',
+                    'include_annotations'
                 )
             );
         }
@@ -105,7 +108,7 @@ class Posts
      * Get peronalized stream
      * Requires scope: none
      * @param array $optional_parameters An array of optional parameters. Allowed keys:
-     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts
+     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts, include_annotations
      * @return array
      */
     public function getPersonalStream($optional_parameters = array())
@@ -119,7 +122,8 @@ class Posts
                     'count',
                     'include_muted',
                     'include_deleted',
-                    'include_directed_posts'
+                    'include_directed_posts',
+                    'include_annotations'
                 )
             );
         }
@@ -131,7 +135,7 @@ class Posts
      * Get the global stream
      * Requires scope: none
      * @param array $optional_parameters An array of optional parameters. Allowed keys:
-     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts
+     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts, include_annotations
      * @return array
      */
     public function getGlobalStream($optional_parameters = array())
@@ -145,7 +149,8 @@ class Posts
                     'count',
                     'include_muted',
                     'include_deleted',
-                    'include_directed_posts'
+                    'include_directed_posts',
+                    'include_annotations'
                 )
             );
 
@@ -159,7 +164,7 @@ class Posts
      * Requires scope: none
      * @param string $hashtag The hashtag to search for
      * @param array $optional_parameters An array of optional parameters. Allowed keys:
-     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts
+     *  since_id, before_id, count, include_muted, include_deleted, include_directed_posts, include_annotations
      * @return array
      */
     public function getPostsByHashtag($hashtag, $optional_parameters = array())
@@ -173,7 +178,8 @@ class Posts
                     'count',
                     'include_muted',
                     'include_deleted',
-                    'include_directed_posts'
+                    'include_directed_posts',
+                    'include_annotations'
                 )
             );
         }
