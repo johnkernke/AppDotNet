@@ -87,7 +87,7 @@ class Posts
     public function getPostReplies($post_id, $optional_parameters = array())
     {
         if (!empty($optional_parameters)) {
-            $optional_parameters = $this->adn_core->parseParamters(
+            $optional_parameters = $this->adn_core->parseParameters(
                 $optional_parameters,
                 array(
                     'since_id',
@@ -114,7 +114,7 @@ class Posts
     public function getPersonalStream($optional_parameters = array())
     {
         if (!empty($optional_parameters)) {
-            $optional_parameters = $this->adn_core->parseParamters(
+            $optional_parameters = $this->adn_core->parseParameters(
                 $optional_parameters,
                 array(
                     'since_id',
@@ -141,7 +141,7 @@ class Posts
     public function getGlobalStream($optional_parameters = array())
     {
         if (!empty($optional_parameters)) {
-            $optional_parameters = $this->adn_core->parseParamters(
+            $optional_parameters = $this->adn_core->parseParameters(
                 $optional_parameters,
                 array(
                     'since_id',
@@ -170,7 +170,7 @@ class Posts
     public function getPostsByHashtag($hashtag, $optional_parameters = array())
     {
         if (!empty($optional_parameters)) {
-            $optional_parameters = $this->adn_core->parseParamters(
+            $optional_parameters = $this->adn_core->parseParameters(
                 $optional_parameters,
                 array(
                     'since_id',

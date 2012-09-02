@@ -316,11 +316,11 @@ class Core
      * @param array $allowed_parameters The allowed parameter keys to return
      * @return array
      */
-    public function parseParamters($parameters, $allowed_parameters)
+    public function parseParameters($parameters, $allowed_parameters)
     {
         $parameters_return = array();
         foreach ($parameters as $key => $value) {
-            if (array_key_exists($key, $allowed_parameters)) {
+            if (in_array($key, $allowed_parameters)) {
                 $parameters_return[$key] = $value;
             }
         }
