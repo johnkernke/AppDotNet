@@ -1,3 +1,8 @@
+WARNING
+=======
+
+Code in this repository is for an old version of the app.net API, maybe I will get around to updating it soon..
+
 AppDotNet
 =========
 
